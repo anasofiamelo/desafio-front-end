@@ -1,13 +1,23 @@
 import React, { FC } from 'react'
 //react native imports
-import { View, Text, TextInput } from 'react-native'
+import { View, Text, TouchableOpacity, TextInput } from 'react-native'
 //style imports
-// import { containers, inputs } from '../styles/index'
+import { containers, inputs, texts } from '../styles/index'
+//navigation
+import { NavigationStackProp } from 'react-navigation-stack';
+//interfaces
+interface navigate {
+    navigation: NavigationStackProp<any>
+}
 
-const Home : FC = () => {
+const Home : FC<navigate> = ({navigation}) => {
     return (
-        <View>
-            <Text> Home Screen</Text>
+        <View style={containers.bodyScreen}>
+            <TouchableOpacity style={inputs.input} onPress={() => navigation.navigate('Search')}>
+                <Text> Search ...</Text>
+            </TouchableOpacity>
+
+            <Text style={texts.homeText}> Hi, <Text style={texts.userName}> Fulano </Text> </Text>
         </View>
     )
 }

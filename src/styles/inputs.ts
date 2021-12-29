@@ -4,7 +4,7 @@ import { StyleSheet } from 'react-native'
 const inputs = StyleSheet.create({
     input: {
         backgroundColor: "#FDFCFC",
-        width: 336,
+        width: 300,
         height: 48,
         borderRadius: 10
     }
