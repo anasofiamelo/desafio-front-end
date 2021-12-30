@@ -3,26 +3,20 @@ import React, { FC, useState } from 'react'
 import { View, Text, TextInput, TouchableOpacity, FlatList, ListRenderItem } from 'react-native'
 //style imports
 import { containers, inputs } from '../styles/index'
-//contexts
-import { useBooks } from '../contexts/books'
+import Icon from 'react-native-vector-icons/Ionicons'
 //components
 import BooksList from '../components/BooksList'
 //interfaces
 import navigate from '../interfaces/navigate'
 
 const Search : FC<navigate> = ({navigation}) => {
-    const [text, onChangeText] = useState('')
-
-    const context = useBooks()
-
-    async function handleSearch() { //calls the array to the context
-        await context.loadBooks(text)
+    function backHome(){
+        navigation.goBack()
     }
 
     return (
-        <View style={containers.bodyScreen}>
-
-            <TextInput 
+        <>
+            {/* <TextInput 
                 onChangeText={onChangeText}
                 value={text}
                 placeholder="Search book">
@@ -30,11 +24,9 @@ const Search : FC<navigate> = ({navigation}) => {
 
             <TouchableOpacity onPress={() => handleSearch()}> 
                 <Text> Search </Text> 
-            </TouchableOpacity>
-
+            </TouchableOpacity> */}
             <BooksList />
-            
-        </View>
+        </>
     )
 }
 

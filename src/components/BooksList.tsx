@@ -1,9 +1,9 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { View, FlatList, Text, TouchableOpacity, Image } from 'react-native';
 //contexts
 import { useBooks } from '../contexts/books';
 //style imports
-import { containers, inputs, cards, texts } from '../styles/index'
+import { containers, cards, texts } from '../styles/index'
 //navigation
 import { useNavigation } from '@react-navigation/native';
 //interfaces
@@ -14,14 +14,16 @@ const BooksList : FC = () => {
     const navigation = useNavigation<DetailsScreenNavigationProp>();
     const context = useBooks();
     const { books } = useBooks();
+    const numColumns = 3
 
     async function handleSearch (bookId: string) {
         await context.loadBook(bookId)
         navigation.navigate('Details', {id: bookId})
     }
-    const numColumns = 3
+
     return (
-        <View>
+        <View style={containers.bodyScreen}>
+
             <FlatList
                 data={books}
                 keyExtractor={(item) => item.id}

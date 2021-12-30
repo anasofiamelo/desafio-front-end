@@ -1,5 +1,4 @@
 import React from 'react';
-import { Text } from 'react-native'
 //contexts
 import { BooksProvider } from './src/contexts/books'
 //navigation

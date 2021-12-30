@@ -5,19 +5,19 @@ import { View, Text, TouchableOpacity, Image } from 'react-native'
 import { containers, texts } from '../styles/index'
 //contexts
 import { useBooks } from '../contexts/books'
-// import IonIcons from '@react-native-vector-icons/FontAwesome'
-
-//interfaces
-const Book : FC = () => {
+//components
+import navigate from '../interfaces/navigate'
+const Book : FC<navigate> = ({navigation}) => {
     const { book } = useBooks()
 
     return (
-        <View style={containers.bodyScreen}>
-            <View style={containers.detailHeaderContainer}></View>
-            <Image 
-                style={{width: 128, height: 192}}
-                source={{uri:`${book.volumeInfo.imageLinks.thumbnail}`}}/> 
-                
+        <View style={containers.bookDetailsContainer}>
+            <View style={containers.bookImageContainer}>
+                <Image 
+                    style={{width: 151, height: 234, resizeMode: 'stretch'}}
+                    source={{uri:`${book.volumeInfo.imageLinks.thumbnail}`}}/> 
+            </View>
+            
             <Text style={texts.bookTitleDetails}> {book.volumeInfo.title} </Text>
             <Text style={texts.bookPublisherDetails}> {book.volumeInfo.publisher} </Text>
             <Text style={texts.bookResume}> {book.volumeInfo.description} </Text>

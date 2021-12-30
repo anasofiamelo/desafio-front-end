@@ -25,6 +25,7 @@ const texts = StyleSheet.create({
     },
     bookResume: {
         color: '#313131',
+        opacity: 0.6,
         fontSize: 14,
         marginTop: 5
     },
@@ -32,7 +33,6 @@ const texts = StyleSheet.create({
         color: '#54565A',
         fontSize: 24,
         fontWeight: '400',
-        marginBottom: 30
     },
     userName: {
         color: '#FF6978',
@@ -42,7 +42,9 @@ const texts = StyleSheet.create({
     subtitle: {
         color: '#3F4043',
         fontSize: 18,
-        fontWeight: '500'
+        fontWeight: '500',
+        marginTop: 30,
+        marginBottom: 15
     },
     inputText: {
         color: '#54565A',
