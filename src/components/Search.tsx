@@ -1,25 +1,22 @@
-import React, { FC, useEffect, useState } from 'react'
+import React, { FC, useState } from 'react'
 //react native imports
 import { View, Text, TextInput, TouchableOpacity, FlatList, ListRenderItem } from 'react-native'
 //style imports
 import { containers, inputs } from '../styles/index'
 //contexts
 import { useBooks } from '../contexts/books'
-//navigation
-import { NavigationStackProp } from 'react-navigation-stack';
+//components
+import BooksList from '../components/BooksList'
 //interfaces
-interface navigate {
-    navigation: NavigationStackProp<any>
-}
+import navigate from '../interfaces/navigate'
 
 const Search : FC<navigate> = ({navigation}) => {
     const [text, onChangeText] = useState('')
 
     const context = useBooks()
 
-    async function handleSearch() {
+    async function handleSearch() { //calls the array to the context
         await context.loadBooks(text)
-        navigation.navigate('Results')
     }
 
     return (
@@ -28,14 +25,15 @@ const Search : FC<navigate> = ({navigation}) => {
             <TextInput 
                 onChangeText={onChangeText}
                 value={text}
-                placeholder="Search book" 
-                style={inputs.input}>
+                placeholder="Search book">
             </TextInput>
 
             <TouchableOpacity onPress={() => handleSearch()}> 
                 <Text> Search </Text> 
             </TouchableOpacity>
 
+            <BooksList />
+            
         </View>
     )
 }

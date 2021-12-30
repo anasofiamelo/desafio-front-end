@@ -3,17 +3,17 @@ import React, { FC } from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 //screens 
-import { Home, Search, Details, Results } from '../screens/index'
+import { Details, Principal } from '../screens/index'
 
 const mainStack = createNativeStackNavigator<RootStackParamList>();
 
 const Routes : FC = () => {
     return (
-        <mainStack.Navigator initialRouteName="Home">
-            <mainStack.Screen name={"Home"} component={Home}/>
-            <mainStack.Screen name={"Search"} component={Search}/>
-            <mainStack.Screen name={"Details"} component={Details}/>
-            <mainStack.Screen name={"Results"} component={Results}/>
+        <mainStack.Navigator initialRouteName="Principal">
+            {/* <mainStack.Screen options={{headerShown: false}} name={"Home"} component={Home}/>
+            <mainStack.Screen options={{headerShown: false}} name={"Search"} component={Search}/> */}
+            <mainStack.Screen options={{headerShown: false}} name={"Details"} component={Details}/>
+            <mainStack.Screen options={{headerShown: false}} name={"Principal"} component={Principal}/>
         </mainStack.Navigator> 
     )
 }

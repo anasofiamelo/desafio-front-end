@@ -1,6 +1,4 @@
-import Home from './Home'
-import Search from './Search'
 import Details from './Details'
-import Results from './Results'
+import Principal from './Principal'
 
-export { Home, Search, Details, Results }
+export { Details, Principal }

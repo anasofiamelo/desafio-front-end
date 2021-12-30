@@ -31,13 +31,24 @@ const texts = StyleSheet.create({
     homeText: {
         color: '#54565A',
         fontSize: 24,
-        fontWeight: '400'
+        fontWeight: '400',
+        marginBottom: 30
     },
     userName: {
         color: '#FF6978',
         fontSize: 24,
-        fontWeight: '600'
-    }
+        fontWeight: '600',
+    },
+    subtitle: {
+        color: '#3F4043',
+        fontSize: 18,
+        fontWeight: '500'
+    },
+    inputText: {
+        color: '#54565A',
+        fontSize: 16,
+        marginLeft: 5
+    },
 })
 
 export default texts;
