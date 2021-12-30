@@ -1,31 +1,28 @@
 import React, { FC, useState } from 'react'
 //react native imports
-import { View, Text, TextInput, TouchableOpacity, FlatList, ListRenderItem } from 'react-native'
-//style imports
-import { containers, inputs } from '../styles/index'
-import Icon from 'react-native-vector-icons/Ionicons'
+import { View, Text, TouchableOpacity } from 'react-native'
 //components
 import BooksList from '../components/BooksList'
 //interfaces
-import navigate from '../interfaces/navigate'
+import Props from '../interfaces/DetailsProps'
+type DetailsScreenNavigationProp = Props['navigation'];
+//contexts
+import { useBooks } from '../contexts/books'
+interface SearchProps {
+    text: string
+}
 
-const Search : FC<navigate> = ({navigation}) => {
-    function backHome(){
-        navigation.goBack()
+const Search : FC<SearchProps> = ({text}) => {
+    const context = useBooks()
+
+    function loadMore(){
+        context.loadBooks(text)
     }
 
     return (
         <>
-            {/* <TextInput 
-                onChangeText={onChangeText}
-                value={text}
-                placeholder="Search book">
-            </TextInput>
-
-            <TouchableOpacity onPress={() => handleSearch()}> 
-                <Text> Search </Text> 
-            </TouchableOpacity> */}
             <BooksList />
+            <TouchableOpacity onPress={() => {loadMore()} }> <Text> Load more </Text> </TouchableOpacity>
         </>
     )
 }

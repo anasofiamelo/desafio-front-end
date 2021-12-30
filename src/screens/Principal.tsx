@@ -25,7 +25,7 @@ const Principal : FC = () => {
     }, [text])
 
     const Index : FC = () => { //when the user is searching for a book, it will change the component to the search screen
-        return isSearching ? <Search navigation/> : <Home />
+        return isSearching ? <Search text={text}/> : <Home />
     }
 
     return (
