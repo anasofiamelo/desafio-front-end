@@ -4,7 +4,7 @@ import API from '../services/API'
 import Constants from 'expo-constants';
 // const appConfig = Constants.manifest;
 
-const API_KEY_HERE =  'AIzaSyDqDsxT3QgqhlXGpCm0Uz6UmwWYwegjOck';
+const API_KEY_HERE =  'your api key';
 
 const BooksContext = createContext<any>({})
 
@@ -16,14 +16,14 @@ export const BooksProvider: React.FC<Props> = ({children}) => {
     async function loadBooks(query: string){  //load the books information and set to var books (query: search input value)
         const response = await API.get(`?q=${query}&maxResults=40&startIndex=${startIndex}&key=${API_KEY_HERE}`)
         setBooks(response.data.items)
+        setStartIndex(+40)
     }
 
     async function loadBook(bookId: string){ //load one single book (bookId: id of the book)
         const response = await API.get(`/${bookId}`)
         setBook(response.data)
-        setStartIndex(+40)
     }
-
+    
     return (
         <BooksContext.Provider value={{loadBooks: loadBooks, loadBook: loadBook, books: books, book: book}}>
             { children }

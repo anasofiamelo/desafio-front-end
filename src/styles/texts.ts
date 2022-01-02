@@ -51,6 +51,12 @@ const texts = StyleSheet.create({
         fontSize: 16,
         marginLeft: 5
     },
+    loadMoreButtonText: {
+        color: '#3F4043',
+        fontSize: 16,
+        fontWeight: '500',
+        letterSpacing: 1
+    },
 })
 
 export default texts;

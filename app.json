@@ -1,7 +1,8 @@
 {
   "expo": {
-    "name": "desafio-front-endTS",
-    "slug": "desafio-front-endTS",
+    "name": "booksapp",
+    "slug": "booksapp",
+    "scheme": "booksapp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

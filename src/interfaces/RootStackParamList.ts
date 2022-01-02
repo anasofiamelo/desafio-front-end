@@ -3,4 +3,5 @@ type RootStackParamList = {
     Search: undefined;
     Details: { id: string };
     Principal: undefined;
+    Login: undefined;
 };

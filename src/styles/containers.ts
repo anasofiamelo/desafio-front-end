@@ -2,10 +2,14 @@
 import { StyleSheet } from 'react-native';
 
 const containers = StyleSheet.create({
-    bodyScreen: {
+    bodyScreen: { 
         backgroundColor: '#F2F2F2',
-        height: '100%',
         paddingLeft: 10,
+    },
+    pageContainer: {
+        backgroundColor: '#F2F2F2',
+        width: '100%',
+        height: '100%'
     },
     bookDetailsContainer: {
         position: 'absolute',
@@ -15,16 +19,18 @@ const containers = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginBottom: 31,
-        position: 'relative',
-        zIndex: 999
-    },
+        zIndex: 999,
+        elevation: 5,
+        backgrondColor: '#F2F2F2'
+    },  
     detailHeaderContainer: {
         width: 600,
         height: 382,
         top: -80,
         backgroundColor: '#FFF6E5',
         borderRadius: 150,
-        left: -200
+        left: -200,
+        zIndex: -2
     },
     searchInputContainer: {
         marginTop: 50,
@@ -45,7 +51,7 @@ const containers = StyleSheet.create({
         backgroundColor: '#00173D',
         borderRadius: 500,
         position: 'absolute',
-        zIndex: 88,
+        zIndex: 1,
         left: 74,
         top: 115
     },
@@ -70,7 +76,12 @@ const containers = StyleSheet.create({
         borderRadius: 3,
         backgroundColor: '#EEF5DB',
         elevation: 1
-    }
+    },
+    loadMoreButtonContainer: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginLeft: -7
+    },
 })
 
 

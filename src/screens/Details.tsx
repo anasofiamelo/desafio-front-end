@@ -21,7 +21,6 @@ const Details : FC<navigate> = ({navigation}) => {
             </TouchableOpacity>
 
             <View style={containers.detailHeaderContainer}></View>
-            <View style={containers.ballContainer}></View>
             <View style={containers.littleBallContainer}></View>
 
             <Book navigation />

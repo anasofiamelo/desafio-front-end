@@ -24,23 +24,17 @@ const Principal : FC = () => {
         }
     }, [text])
 
-    const Index : FC = () => { //when the user is searching for a book, it will change the component to the search screen
-        return isSearching ? <Search text={text}/> : <Home />
-    }
-
     return (
         <View style={containers.bodyScreen}>
             
             <View style={containers.searchInputContainer}>
-
                 <SearchInput 
                     value={text} 
                     onChange={(search: string) => setText(search)} 
                 />
-
             </View>
                 
-            <Index />
+            {isSearching ? <Search text={text}/> : <Home /> /* when the user is searching for a book, it will change the component to the search screen */}
 
         </View>
     )
