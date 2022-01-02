@@ -13,7 +13,9 @@ const containers = StyleSheet.create({
     },
     bookDetailsContainer: {
         position: 'absolute',
-        top: 84
+        top: 84,
+        width: 335,
+        marginLeft: 21
     },
     bookImageContainer: {
         justifyContent: 'center',
@@ -23,7 +25,10 @@ const containers = StyleSheet.create({
         elevation: 5,
         backgrondColor: '#F2F2F2'
     },  
-    detailHeaderContainer: {
+    detailContainer: {
+        overflow: 'hidden',
+    },
+    detailHeader: {
         width: 600,
         height: 382,
         top: -80,
@@ -31,6 +36,9 @@ const containers = StyleSheet.create({
         borderRadius: 150,
         left: -200,
         zIndex: -2
+    },
+    detailHeaderContainer: {
+        overflow: 'hidden'
     },
     searchInputContainer: {
         marginTop: 50,

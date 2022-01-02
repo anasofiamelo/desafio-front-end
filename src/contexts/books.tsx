@@ -4,7 +4,7 @@ import API from '../services/API'
 import Constants from 'expo-constants';
 // const appConfig = Constants.manifest;
 
-const API_KEY_HERE =  'your api key';
+const API_KEY_HERE =  'AIzaSyDqDsxT3QgqhlXGpCm0Uz6UmwWYwegjOck';
 
 const BooksContext = createContext<any>({})
 

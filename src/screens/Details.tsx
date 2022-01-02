@@ -20,7 +20,9 @@ const Details : FC<navigate> = ({navigation}) => {
                 <Icon name="arrow-back-outline" size={30}/>
             </TouchableOpacity>
 
-            <View style={containers.detailHeaderContainer}></View>
+            <View style={containers.detailHeaderContainer}>
+                <View style={containers.detailHeader}></View>
+            </View>
             <View style={containers.littleBallContainer}></View>
 
             <Book navigation />

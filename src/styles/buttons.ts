@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 
 const buttons = StyleSheet.create({
     loadMoreButton: {
-        width: 104,
+        width: 120,
         height: 56,
         backgroundColor: '#ffffff',
         borderRadius: 2,
